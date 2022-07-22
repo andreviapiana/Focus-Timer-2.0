@@ -1,0 +1,439 @@
+/* ============================== RESET ============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================== VARIÁVEIS ============================== */
+:root {
+    --bg-color: #e5e5e5;
+
+    --base-color: 194;
+    --bg-primary-light: hsla(var(--base-color), 97%, 35%, 1);
+    --bg-primary-hover: hsla(var(--base-color), 97%, 50%, 1);
+    --bg-slider: hsla(var(--base-color), 97%, 50%, .8);
+    --primary-color: hsla(240, 6%, 21%, 1);
+    --secondary-color: hsla(0, 0%, 100%, 1);
+    --button-color: rgb(200, 200, 200);
+
+    /* FONT SIZES */
+    font-size: 62.5%;
+}
+
+/* ============================== BODY ============================== */
+body {
+    background-color: var(--bg-color);
+
+    font-family: 'Roboto', sans-serif;
+
+    display: grid;
+    min-height: 100vh;
+}
+
+.swap {
+  position: fixed;
+  right: 6.4rem;
+  top: 6.4rem;
+  cursor: pointer;
+}
+
+/* ============================== MAIN ============================== */
+main {
+    width: clamp(41.2rem, 41.2rem + 30vw, 92.1rem);
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 5rem;
+    padding: 5rem 5rem 1rem;
+    margin: auto;
+    border-radius: 3rem;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur (10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+}
+
+.backgroundForest {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.backgroundRain {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.backgroundFire {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+}
+
+.backgroundCofee {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#clock {
+    margin: auto;
+}
+
+#timer {
+    display: flex;
+    
+    margin-bottom: 20px;
+    
+    font-size: 12.6rem;
+    line-height: 12.6rem;
+
+    animation: topdown 1500ms 350ms forwards;
+}
+
+#controls {
+    display: flex;
+    gap: 4rem;
+
+    animation: opacity 2500ms 350ms forwards;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#buttons .cofee {
+    animation: downtop 1500ms 350ms forwards;
+}
+
+#buttons .forest {
+    animation: downtop 1500ms 350ms forwards;
+}
+
+#buttons .rain {
+    animation: downtop 1500ms 350ms forwards;
+}
+
+#buttons .fire {
+    animation: downtop 1500ms 350ms forwards;
+}
+
+#buttons button {
+    background-color: var(--button-color);
+    border-radius: 1rem;
+
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, .5);
+    
+    width: 6rem;
+    height: 6rem;
+}
+
+#buttons button:hover {
+  background-color: var(--bg-primary-hover);
+  transition: 300ms;
+}
+
+#buttons button.focus {
+  top: 2px;
+  left: 1px;
+  box-shadow: none;
+  background-color: var(--bg-primary-light);
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, .5);
+} 
+
+.hide {
+    display: none;
+}
+
+.slider {
+    display: none;
+}
+
+.active {
+    opacity: 0.25;
+}
+
+.play svg path,
+.pause svg path,
+.stop svg path,
+.cofee svg path,
+.rain svg path,
+.forest svg path,
+.fire svg path,
+.timerUp svg path,
+.timerDown svg path {
+    fill: var(--primary-color);
+}
+
+.cofee svg,
+.rain svg,
+.forest svg,
+.fire svg {
+    width: 50%;
+}
+
+.night svg path {
+  fill: gray;
+}
+
+/* ============================== SLIDER ============================== */
+.slidecontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+}
+
+#sliderCel {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 15px;
+  border-radius: 5px;  
+  background: var(--bg-color);
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+#sliderCel::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: var(--bg-slider);
+  cursor: pointer;
+}
+
+/* ============================== DARK MODE ============================== */
+body.dark main {
+  background: rgba(58, 58, 58, 0.75);
+}
+
+body.dark,
+body.dark #controls svg path,
+body.dark #buttons svg path {
+  fill: white;
+  color: white;
+  background-color: black;
+}
+
+body.dark #buttons button {
+  background-color: var(--button-color);
+  fill: white;
+}
+
+body.dark #buttons button:hover {
+  background-color: var(--bg-primary-hover);
+  transition: 300ms;
+}
+
+body.dark #buttons button.focus {
+  top: 2px;
+  left: 1px;
+  box-shadow: none;
+  background-color: var(--bg-primary-light);
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, .5);
+}
+
+body.dark #sliderCel {
+  background: #d3d3d3;
+}
+
+/* ============================== KEYFRAMES ============================== */
+@keyframes topdown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+@keyframes downtop {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+@keyframes leftrighttop {
+      0% {
+        opacity: 0;
+        transform: translateX(-25px) translateY(-25px);
+      }
+    
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+}
+  
+@keyframes rightlefttop {
+      0% {
+        opacity: 0;
+        transform: translateX(25px) translateY(-25px);
+      }
+    
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+}
+  
+@keyframes leftrightbottom {
+      0% {
+        opacity: 0;
+        transform: translateX(-25px) translateY(50px);
+      }
+    
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+}
+  
+@keyframes rightleftbottom {
+      0% {
+        opacity: 0;
+        transform: translateX(25px) translateY(50px);
+      }
+    
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+}
+
+@keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+}
+
+/* ============================== MEDIA QUERIES - DESKTOP ============================== */
+@media (min-width: 800px) {
+
+    main {
+      flex-direction: row;
+      gap: clamp(5rem, 5rem + 8vw, 19.2rem);
+      padding: 5rem;
+    }
+
+    #buttons {
+        width: clamp(20rem, 20rem + 30vw, 30.8rem);
+        height: clamp(15rem, 15rem + 11vw, 33.6rem);
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 3.2rem;
+    }
+    
+
+    #buttons button {
+        background-color: var(--button-color);
+        border-radius: 2.4rem;
+    
+        box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
+        
+        width: clamp(2rem, 1rem + 8vw, 13.8rem);
+        height: clamp(2rem, 1rem + 9vw, 15.2rem);
+        margin: auto;
+    }
+
+    #buttons .cofee {
+        animation: leftrightbottom 1500ms 350ms forwards;
+    }
+    
+    #buttons .forest {
+        animation: leftrighttop 1500ms 350ms forwards;
+    }
+    
+    #buttons .rain {
+        animation: rightlefttop 1500ms 350ms forwards;
+    }
+
+    #buttons .fire {
+      animation: rightleftbottom 1500ms 350ms forwards;
+  }
+
+    .slidecontainer {
+      display: none;
+    }
+
+    .fire .slider,
+    .rain .slider,
+    .forest .slider,
+    .cofee .slider {
+      display: inline-block;
+      visibility: hidden;
+      position: absolute;
+      right: 20%;
+      bottom: 0.75rem;
+      z-index: 9999;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 60%;
+      height: 8px;
+      border-radius: 5px;  
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%; 
+      background: var(--bg-slider);
+      cursor: pointer;
+    }
+}
