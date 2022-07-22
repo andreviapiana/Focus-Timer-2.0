@@ -4,7 +4,7 @@ Este desafio é a junção do desafios 9 e 10 disponíveis no curso, no Stage 05
 
 Nele devemos criar um Focus Timer com a possibilidade de ajuste de tempo. O timer terá a opção de seleção do som desejado, bem como o seu volume. Fumções como controle de volume e dark-mode estão incluídas nele. Como parte da minha ciração livre realizei a adição da reponsividade, além da inserção backgrounds customizados e sliders de volume individuais para cada botão. A página em formato desktop é vista na imagem abaixo:
 
-![Untitled7](https://user-images.githubusercontent.com/106932234/177558775-0706db1e-6376-4ea8-9e53-4340b468b32c.png)
+![Untitled7](https://user-images.githubusercontent.com/106932234/180580585-23ba63bc-ce22-472e-87a9-836d8e7bead0.png)
 
 O objetivo final foi atingido.
 
