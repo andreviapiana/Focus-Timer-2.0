@@ -40,7 +40,7 @@ body {
 
 /* ============================== MAIN ============================== */
 main {
-    width: clamp(41.2rem, 41.2rem + 30vw, 92.1rem);
+    width: clamp(30.0rem, 30.0rem + 30vw, 92.1rem);
     display: flex;
     flex-direction: column;
 
@@ -356,6 +356,7 @@ body.dark #sliderCel {
 @media (min-width: 800px) {
 
     main {
+      width: clamp(41.2rem, 41.2rem + 30vw, 92.1rem);
       flex-direction: row;
       gap: clamp(5rem, 5rem + 8vw, 19.2rem);
       padding: 5rem;
