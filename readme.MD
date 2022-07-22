@@ -10,4 +10,4 @@ O objetivo final foi atingido.
 
 O carregamento dos arquivos foi todo feito via linha de comando utilizando o Git Bash.
 
-[O resultado final pode ser visto aqui](https://andreviapiana.github.io/space-cream/)
+[O resultado final pode ser visto aqui](https://andreviapiana.github.io/Focus-Timer-2.0/)
